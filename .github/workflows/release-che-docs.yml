@@ -36,8 +36,6 @@ jobs:
           pip install yq
 
           hub version
-
-          apt-get install yq
           
           git config --global user.name "Mykhailo Kuznietsov"
           git config --global user.email "mkuznets@redhat.com"
