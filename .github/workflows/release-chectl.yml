@@ -25,8 +25,16 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
       - name: Release chectl PRs
         run: |
+          #install yq
+          python -m pip install --upgrade pip
+          pip install yq
+
           hub version
           git config --global user.name "Mykhailo Kuznietsov"
           git config --global user.email "mkuznets@redhat.com"
